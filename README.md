@@ -4,7 +4,7 @@
 
 ### Description
 
-SchemeRealizer - A free ORM and Translator for Diagrams, Databases and PHP-Classes/Interfaces.
+SchemeRealizer - A free ORM and Translator for Diagrams, Databases and Classes/Interfaces.
 
 ### Installation
 
@@ -12,18 +12,20 @@ SchemeRealizer - A free ORM and Translator for Diagrams, Databases and PHP-Class
 
 ### Functions
 
- - Translate Databases to Class-Diagrams and PHP-Classes/Interfaces
- - Translate Class-Diagrams to Databases and PHP-Classes/Interfaces
- - Translate PHP-Classes to Databases and Class-Diagrams
- - Translate PHP-Interfaces to Class-Diagrams
+ - Translate Databases to Class-Diagrams and Classes/Interfaces
+ - Translate Class-Diagrams to Databases and Classes/Interfaces
+ - Translate Classes to Databases and Class-Diagrams
+ - Translate Interfaces to Class-Diagrams
 
 ### Requirements API
 
  - PHP >= 5.6
+ - JRE(If you consider to parse Java-Classes)
 
 ### Requirements Application
 
  - PHP >= 5.6
+ - JRE(If you consider to parse Java-Classes)
  - Webserver(f.e apache2)
 
 ### Licence
