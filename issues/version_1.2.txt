@@ -1,0 +1,13 @@
+### Updates for the Version 1.2
+
+#### Manage relationships
+
+ - Class: Annotations f.e @tableToRefer(CID => CFS)
+ - Class-Diagram Attribute f.e CFS @tableToRefer => CID
+ - Database ORM f.e setRelationships()
+
+#### Database
+
+ - default
+
+#### Dont forget git tag!

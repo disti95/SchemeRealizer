@@ -1,0 +1,31 @@
+<<class>>
+servers
+-------------------------
+- Server_name
+- Host
+- Db
+- Username
+- Password
+- Port
+- Socket
+- Wrapper
+- Owner
+-------------------------
++ getServer_name()
++ getHost()
++ getDb()
++ getUsername()
++ getPassword()
++ getPort()
++ getSocket()
++ getWrapper()
++ getOwner()
++ setServer_name($Server_name)
++ setHost($Host)
++ setDb($Db)
++ setUsername($Username)
++ setPassword($Password)
++ setPort($Port)
++ setSocket($Socket)
++ setWrapper($Wrapper)
++ setOwner($Owner)

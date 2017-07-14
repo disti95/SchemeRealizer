@@ -1,0 +1,7 @@
+- doc/Architecture(PDF)
+- doc/gen/sqlvalidation(PDF)
+- doc/php/Parsing(PDF)
+- doc/structure/ARRAY_BACKEND, ARRAY_FRONTEND(TXT)
+- doc/api/schemerealizer(PDF)
+- doc/utils/Utils(PDF)
+- doc/NORM(TXT) refactoring required

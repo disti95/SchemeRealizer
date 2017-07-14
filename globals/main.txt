@@ -1,0 +1,3 @@
+work=~/workspace/SchemeRealizer
+stable=1.0
+beta=1.1

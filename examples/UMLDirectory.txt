@@ -1,0 +1,14 @@
+<<class>>
+Directory
+--------------------------
+- files
+- root
+- extension
+ -------------------------
++ __construct($root, $extension)
++ getFiles()
++ setFiles()
++ getRoot()
++ setRoot($root)
++ getExtension()
++ setExtension($extension)

@@ -1,0 +1,64 @@
+###ArraysCase.php###
+
+PHPUnit 5.4.6 by Sebastian Bergmann and contributors.
+
+......                                                              6 / 6 (100%)
+
+Time: 195 ms, Memory: 11.75MB
+
+OK (6 tests, 24 assertions)
+
+-------------------------------
+###ClassGenCase.php###
+
+PHPUnit 5.4.6 by Sebastian Bergmann and contributors.
+
+.....                                                               5 / 5 (100%)
+
+Time: 197 ms, Memory: 12.00MB
+
+OK (5 tests, 5 assertions)
+
+-------------------------------
+###ParsingCase.php###
+
+PHPUnit 5.4.6 by Sebastian Bergmann and contributors.
+
+...                                                                 3 / 3 (100%)
+
+Time: 276 ms, Memory: 12.00MB
+
+OK (3 tests, 12 assertions)
+
+-------------------------------
+###prepArrCase.php###
+
+PHPUnit 5.4.6 by Sebastian Bergmann and contributors.
+
+....                                                                4 / 4 (100%)
+
+Time: 281 ms, Memory: 12.50MB
+
+OK (4 tests, 4 assertions)
+
+-------------------------------
+###SQLGenCase.php###
+
+PHPUnit 5.4.6 by Sebastian Bergmann and contributors.
+
+................                                                  16 / 16 (100%)
+
+Time: 210 ms, Memory: 11.75MB
+
+OK (16 tests, 26 assertions)
+
+-------------------------------
+###XMLCase.php###
+
+	PHPUnit 5.4.6 by Sebastian Bergmann and contributors.
+
+.....                                                               5 / 5 (100%)
+
+Time: 227 ms, Memory: 11.75MB
+
+OK (5 tests, 15 assertions)

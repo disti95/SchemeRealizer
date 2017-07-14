@@ -1,0 +1,119 @@
+###ArraysCase.php###
+
+PHPUnit 5.4.6 by Sebastian Bergmann and contributors.
+
+......                                                              6 / 6 (100%)
+
+Time: 236 ms, Memory: 11.75MB
+
+OK (6 tests, 24 assertions)
+
+-------------------------------
+###ClassGenCase.php###
+
+PHPUnit 5.4.6 by Sebastian Bergmann and contributors.
+
+.....                                                               5 / 5 (100%)
+
+Time: 201 ms, Memory: 12.25MB
+
+OK (5 tests, 5 assertions)
+
+-------------------------------
+###ParsingCase.php###
+
+PHPUnit 5.4.6 by Sebastian Bergmann and contributors.
+
+...                                                                 3 / 3 (100%)
+
+Time: 245 ms, Memory: 12.00MB
+
+OK (3 tests, 12 assertions)
+
+-------------------------------
+###prepArrCase.php###
+
+PHPUnit 5.4.6 by Sebastian Bergmann and contributors.
+
+....                                                                4 / 4 (100%)
+
+Time: 284 ms, Memory: 12.50MB
+
+OK (4 tests, 4 assertions)
+
+-------------------------------
+###SQLGenCase.php###
+
+PHPUnit 5.4.6 by Sebastian Bergmann and contributors.
+
+................                                                  16 / 16 (100%)
+
+Time: 231 ms, Memory: 12.00MB
+
+OK (16 tests, 26 assertions)
+
+-------------------------------
+###XMLCase.php###
+
+	PHPUnit 5.4.6 by Sebastian Bergmann and contributors.
+
+.....                                                               5 / 5 (100%)
+
+Time: 313 ms, Memory: 11.75MB
+
+OK (5 tests, 15 assertions)
+
+-------------------------------
+###GlobalsCase.php###
+
+PHPUnit 5.4.6 by Sebastian Bergmann and contributors.
+
+...                                                                 3 / 3 (100%)
+
+Time: 263 ms, Memory: 11.75MB
+
+OK (3 tests, 14 assertions)
+
+-------------------------------
+###SQLValidationCase.php###
+
+PHPUnit 5.4.6 by Sebastian Bergmann and contributors.
+
+.....                                                               5 / 5 (100%)
+
+Time: 5.19 seconds, Memory: 77.00MB
+
+OK (5 tests, 69 assertions)
+
+-------------------------------
+###SchemeRealizerCase.php###
+
+PHPUnit 5.4.6 by Sebastian Bergmann and contributors.
+
+..                                                                  2 / 2 (100%)
+
+Time: 195 ms, Memory: 13.00MB
+
+OK (2 tests, 3 assertions)
+
+-------------------------------
+###DirectoryCase.php###
+
+PHPUnit 5.4.6 by Sebastian Bergmann and contributors.
+
+.                                                                   1 / 1 (100%)
+
+Time: 213 ms, Memory: 11.50MB
+
+OK (1 test, 4 assertions)
+
+-------------------------------
+###ORMCase.php###
+
+PHPUnit 5.4.6 by Sebastian Bergmann and contributors.
+
+..                                                                  2 / 2 (100%)
+
+Time: 191 ms, Memory: 11.75MB
+
+OK (2 tests, 4 assertions)

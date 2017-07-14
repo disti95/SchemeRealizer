@@ -1,0 +1,13 @@
+CREATE TABLE servers(
+	Server_name VARCHAR(100) NOT NULL,
+	Host VARCHAR(100) NOT NULL,
+	Db VARCHAR(100) NOT NULL,
+	Username VARCHAR(100) NOT NULL,
+	Password VARCHAR(100) NOT NULL,
+	Port INT(11) NOT NULL,
+	Socket INT(11) NOT NULL,
+	Wrapper INT(11) NOT NULL,
+	Owner VARCHAR(100) NOT NULL,
+	UNIQUE (Socket),
+	PRIMARY KEY (Server_name,Port)
+)

@@ -1,0 +1,155 @@
+/*
+SchemeRealizer - A free ORM and Translator for Diagrams, Databases and PHP-Classes/Interfaces.
+Copyright (C) 2016  Michael Watzer
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+/**
+ * @author   Michael Watzer
+ * @version  1.0
+ * @since    ?
+ * @category StyleSheet
+*/
+@charset "UTF-8";
+
+#projectcolor{
+	color: #4C0B5F;
+}
+
+#SQLExample{
+	overflow-x:auto;
+	white-space:nowrap;
+}
+
+/*
+	Show ID's to make the content invisible/visible
+*/
+
+#showIndex{
+	display: block;
+}
+
+#showAI{
+	display: none;
+}
+
+#showSize{
+	display: block;
+}
+
+#showMap {
+	display: block;
+}
+
+#showAttrMeth{
+	display: none;
+}
+
+#showSelectParameter{
+	display: none;
+}
+
+#showDBMS{
+	display: "block";
+}
+
+#showPathClassConf{
+	display: "none";
+}
+
+#showPathUMLConf{
+	display: "none";
+}
+
+#showPathSQLConf{
+	display: "none";
+}
+
+#showParserClassConf {
+	display: "none";
+}
+
+#showStaticBtn {
+	display: "none";
+}
+
+#showStaticChk {
+	display: "none";
+}
+
+#showConst {
+	display: "none";
+}
+
+#showFinalAbstract {
+	display: "none";
+}
+
+#classAttr {
+	display: "none";
+}
+
+#modifierSelect {
+	display: "none";
+}
+
+#showProjectPath {
+	display: "none";
+}
+
+#showDSN {
+	display: "none";
+}
+
+#showParentsInterfaces{
+	display: inline-flex; 
+	width:60%;
+}
+
+#showAttrValue{
+	display: "none";
+}
+
+/*
+	Show ID's to make the content invisible/visible
+*/
+
+#subContentDIV{
+	background-color: #4C0B5F;
+	width: 100%;
+	padding:20px;
+	color: #fff;
+	overflow:auto;
+}
+
+.btn.btn-primary{
+	background-color:#fff;
+	color:#4C0B5F;
+}
+
+#errorDIV{
+	background-color:#B40404;
+	color:#fff;
+	padding:20px;
+	width:100%;
+	overflow:auto;
+}
+
+#successDIV{
+	background-color:#04B45F;
+	color:#fff;
+	padding:20px;
+	width:100%;
+	overflow:auto;
+}

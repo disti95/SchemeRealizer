@@ -1,0 +1,14 @@
+<<class>>
+UMLExample
+-------------------------
+- name
+- age
+- gender
+-------------------------
+# __construct($name, $age, $gender)
+# getName()
+# getAge()
+# getGender()
+# setName($name)
+# setAge($age)
+# setGender($gender)

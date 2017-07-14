@@ -1,0 +1,12 @@
+Tasks:
+
+ - Modifiy particular values(Modifier, Data type, Size,..) 
+ - Scans the received Directory
+ - Flushing(Interacting with /gen)
+
+Something like:
+
+ - $sr = new schemerealizer("/path/to/dir", in, out);
+ - in/out -> ["uml", "sqlite/mysql/mariadb", "class", "interface"]
+ - $sr->getInstance()->getClass(["LVL1[_LVL2_#]"])->getAttr([“name“])->setModifier->(["private", "public", "protected"]);
+ - $sr->flushAll();

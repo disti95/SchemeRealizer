@@ -1,0 +1,3 @@
+### umlflush
+
+Generated Class-Diagrams.

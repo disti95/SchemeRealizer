@@ -1,0 +1,4 @@
+###lib_test.js###
+
+function in_array OK!
+function checkClassModifier OK!

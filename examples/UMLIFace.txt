@@ -1,0 +1,7 @@
+<<interface>>
+MyInterface
+extends => /path/to/parent:ParentInterface
+----------------------------------------
+----------------------------------------
+setName($name = 'Michael') {static}
+getName()

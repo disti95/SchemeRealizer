@@ -1,0 +1,57 @@
+#!/bin/bash
+
+#SchemeRealizer - A free ORM and Translator for Diagrams, Databases and PHP-Classes/Interfaces.
+#Copyright (C) 2016  Michael Watzer
+
+#This program is free software: you can redistribute it and/or modify
+#it under the terms of the GNU Affero General Public License as published by
+#the Free Software Foundation, either version 3 of the License, or
+#(at your option) any later version.
+
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU Affero General Public License for more details.
+
+#You should have received a copy of the GNU Affero General Public License
+#along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+#@author Michael Watzer
+#@version 1.1
+#@since ?
+#@category This file is for the handling of SchemeRealizer
+
+#Declare Vars
+project=$HOME/workspace/SchemeRealizer/
+apache=/var/www/html/SchemeRealizer
+
+#Check if Parameter is set
+if [ $# -eq 0 ]; then
+	echo "Parameter missing!"
+	echo "Get help with: schemerealizer -help"
+	exit 1
+fi
+
+#If -help output parameters
+if [ $1 == "-help" ]; then
+	echo "Parameters:"
+	echo "-cp = SchemeRealizer to Apache"
+	exit 0
+fi
+
+#If -cp copy project to apache folder
+if [ $1 == "-cp" ]; then
+	#Check if SchemeRealizer directories exist
+	if [ ! -d $project ]; then
+		echo "Directory $project does not exist!"
+		exit 1
+	fi
+	if [ ! -d $apache ]; then
+		echo "Directory $apache does not exist!"
+		exit 1
+	fi
+	rm -r $apache/*
+	cp -a -r $project* $apache
+	exit 0
+fi
+

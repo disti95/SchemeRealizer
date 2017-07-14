@@ -1,0 +1,130 @@
+author  : 	Michael Watzer
+since   : 	28.08.2016
+category: 	NORM
+version : 	1.0
+
+#####SchemeRealizer - Folder-Structure#####
+
+- api         - api implementation
+- bs          - BootStrap
+- clflush     - default class flushing folder
+- config      - config schema(xsd) config file itself
+- constants   - declared constants/functions
+- controlling - automatism and controlling
+- cs          - C# parser
+- css         - css files
+- devtools    - developer tools
+- doc         - project and techn. documentation
+- engines     - database driver
+- error       - error class for error handling
+- examples    - examples used for testing
+- gen         - generates an class/uml/database file out of an array
+- globals     - global variables in .txt form used by utils/Globals.php
+- graphics    - pictures and so on
+- includes    - view of application
+- install     - install scripts
+- issues      - issues backuped from the GitLab server
+- java        - Java parser
+- js          - frontend scripts
+- logging     - spooled files created from the controlling system
+- native      - execution of native os commands
+- net         - socket-client
+- orm         - create array of databases used by gen classes
+- php         - php parser
+- req         - response to ajax-request
+- schema      - schema files
+- sh          - shell scripts(logging, schemerealizer,...)
+- sqlflush    - default sql flushing folder
+- testing     - cli/phpunit test programs
+- uml         - uml parser
+- umlflush    - default uml flushing folder
+- utils       - basic classes
+
+#####SchemeRealizer - Class-Diagram#####
+
+Pattern:
+
+[<<family>>]
+name
+[{attribute}]
+[extends => file:class]
+[implements => file:interface, file2:interface2]
+----------------------------------
+[modifier] name[:type] [= default] [{attributes}] [@table => property]
+----------------------------------
+[modifier] name [(name[:type] [= default])] [{attributes}]
+
+Dependencies and allowed keywords:
+
+[<<interface ^ class>>]
+name
+IF class: [{abstract ^ final}]
+IF class/interface: [extends => file:class]
+IF class: [implements => file:interface]
+------------------------------------
+[+, -, #] name[:type] [= default] [{static ^ const}] [@table => property]
+------------------------------------
+[+, -, #] name [(name[:type] [= default])] [{static || (final ^ abstract)}]
+
+Further explanation:
+
+[= default]:
+
+allowed: any value and array(val1, [array(val1, val2)], val3)
+
+[:type]:
+
+allowed: array 
+
+params: [:type]:
+
+allowed: classes, callable, array
+
+const:
+
+NOTE THAT const HAS NO MODIFIER.
+
+||:
+
+BOTH OR ONE ATTRIBUTES CAN BE SET.
+NOTE THAT ATTRIBUTES ARE SEPARATED BY ,
+
+^:
+
+JUST ONE OF THE ATTRIBUTES CAN BE SET.
+
+IF class:
+
+family HAS TO BE AN class.
+
+extends => file:class and implements => file:interface:
+
+NOTE THAT YOU HAVE TO DEFINE THE ABSOLUTE PATH OF THE file.
+
+modifier -:
+
+NOTE THAT '-' CAN NOT BE USED WITH THE abstract ATTRIBUTE.
+
+IF method:
+
+NOTE THAT ALL names HAVE TO END WITH A BRACKET ')', INDEPENTLY IF THERE ARE params INVOLVED.
+
+#####SchemeRealizer - PHP-Classes(Relationships)#####
+
+Pattern:
+
+/*
+ * @table(KEY => KEY)
+ */
+
+1:n relationship between Company and Employee:
+
+/*
+ * @Company(CFS => CID)
+ */
+ 		 
+#####SchemeRealizer - Validation#####
+
+Attribute/Method/Class/Interface regex:
+
+/^[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*/

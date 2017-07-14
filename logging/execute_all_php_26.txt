@@ -1,0 +1,2883 @@
+###classgentest.php###
+
+<?php
+
+include_once '/path/to/Person.php';
+include_once '/path/to/IPerson.php';
+include_once '/path/to/IHuman.php';
+abstract class Employee extends Person implements IPerson, IHuman {
+
+	const empid = array('0' => 'Michael', '1' => 'Watzer', 'Family' => array('Monika', 'Stefanie'));
+	protected $firstname;
+	private $lastname;
+
+	public function getGetter() {
+		return $this->getter;
+	}
+	public abstract function getAbstractGetter();
+
+	public function setSetter($setter) {
+		$this->setter = $setter;
+	}
+	public abstract function setAbstractSetter($setter);
+
+	protected final static function getCompany($name, array $employees = array('Michael', 'Watzer'), callable $func) {
+
+	}
+	public abstract function getPerson();
+
+}
+
+?>
+-------------------------------
+###Config_Schema_test.php###
+
+	Schema-Validation of XML-File ../../config/config.xml OK!
+
+-------------------------------
+###defaultparamvalue_eval.php###
+
+################################################################################
+### UML
+################################################################################
+array(3) {
+  ["$name"]=>
+  NULL
+  ["array $employees"]=>
+  array(2) {
+    [0]=>
+    string(7) "Michael"
+    [1]=>
+    string(6) "Watzer"
+  }
+  ["callable $func"]=>
+  NULL
+}
+################################################################################
+### PHP - Token-based
+################################################################################
+array(7) {
+  ["array $var1"]=>
+  NULL
+  ["callable $var2"]=>
+  NULL
+  ["ReflectionClass $rc"]=>
+  NULL
+  ["$person"]=>
+  array(2) {
+    [0]=>
+    string(14) "Michael Watzer"
+    [1]=>
+    int(22)
+  }
+  ["$var1"]=>
+  NULL
+  ["$var2"]=>
+  NULL
+  ["callable $var3"]=>
+  NULL
+}
+################################################################################
+### PHP - Reflection-based
+################################################################################
+array(7) {
+  ["array $var1"]=>
+  NULL
+  ["callable $var2"]=>
+  NULL
+  ["ReflectionClass $rc"]=>
+  NULL
+  ["$person"]=>
+  array(2) {
+    [0]=>
+    string(14) "Michael Watzer"
+    [1]=>
+    int(22)
+  }
+  ["$var1"]=>
+  NULL
+  ["$var2"]=>
+  NULL
+  ["callable $var3"]=>
+  NULL
+}
+################################################################################
+### Compare PHP - Reflection-based and PHP - Token-based
+################################################################################
+OK!
+
+-------------------------------
+###Directory_test.php###
+
+array(1) {
+  [0]=>
+  string(56) "/home/michael/workspace/SchemeRealizer/examples/MyLIB.db"
+}
+array(110) {
+  [0]=>
+  string(62) "/home/michael/workspace/SchemeRealizer/api/ischemerealizer.php"
+  [1]=>
+  string(55) "/home/michael/workspace/SchemeRealizer/api/isrerror.php"
+  [2]=>
+  string(61) "/home/michael/workspace/SchemeRealizer/api/schemerealizer.php"
+  [3]=>
+  string(54) "/home/michael/workspace/SchemeRealizer/api/srerror.php"
+  [4]=>
+  string(62) "/home/michael/workspace/SchemeRealizer/constants/constants.php"
+  [5]=>
+  string(66) "/home/michael/workspace/SchemeRealizer/controlling/execute_all.php"
+  [6]=>
+  string(59) "/home/michael/workspace/SchemeRealizer/devtools/prog2fs.php"
+  [7]=>
+  string(58) "/home/michael/workspace/SchemeRealizer/engines/mongodb.php"
+  [8]=>
+  string(54) "/home/michael/workspace/SchemeRealizer/engines/sql.php"
+  [9]=>
+  string(54) "/home/michael/workspace/SchemeRealizer/error/error.php"
+  [10]=>
+  string(57) "/home/michael/workspace/SchemeRealizer/examples/Event.php"
+  [11]=>
+  string(61) "/home/michael/workspace/SchemeRealizer/examples/MySQLTest.php"
+  [12]=>
+  string(73) "/home/michael/workspace/SchemeRealizer/examples/PHP_Parser_ErrorClass.php"
+  [13]=>
+  string(77) "/home/michael/workspace/SchemeRealizer/examples/PHP_Parser_OrderTestClass.php"
+  [14]=>
+  string(72) "/home/michael/workspace/SchemeRealizer/examples/PHP_Parser_TestClass.php"
+  [15]=>
+  string(62) "/home/michael/workspace/SchemeRealizer/examples/SQLiteTest.php"
+  [16]=>
+  string(69) "/home/michael/workspace/SchemeRealizer/examples/defaultparamvalue.php"
+  [17]=>
+  string(63) "/home/michael/workspace/SchemeRealizer/examples/userUMLTest.php"
+  [18]=>
+  string(55) "/home/michael/workspace/SchemeRealizer/gen/classgen.php"
+  [19]=>
+  string(55) "/home/michael/workspace/SchemeRealizer/gen/nosqlgen.php"
+  [20]=>
+  string(53) "/home/michael/workspace/SchemeRealizer/gen/sqlgen.php"
+  [21]=>
+  string(60) "/home/michael/workspace/SchemeRealizer/gen/sqlvalidation.php"
+  [22]=>
+  string(53) "/home/michael/workspace/SchemeRealizer/gen/umlgen.php"
+  [23]=>
+  string(57) "/home/michael/workspace/SchemeRealizer/includes/about.php"
+  [24]=>
+  string(66) "/home/michael/workspace/SchemeRealizer/includes/class2database.php"
+  [25]=>
+  string(65) "/home/michael/workspace/SchemeRealizer/includes/class2diagram.php"
+  [26]=>
+  string(71) "/home/michael/workspace/SchemeRealizer/includes/class2mongodbExport.php"
+  [27]=>
+  string(69) "/home/michael/workspace/SchemeRealizer/includes/class2mysqlExport.php"
+  [28]=>
+  string(70) "/home/michael/workspace/SchemeRealizer/includes/class2sqliteExport.php"
+  [29]=>
+  string(58) "/home/michael/workspace/SchemeRealizer/includes/config.php"
+  [30]=>
+  string(66) "/home/michael/workspace/SchemeRealizer/includes/database2class.php"
+  [31]=>
+  string(68) "/home/michael/workspace/SchemeRealizer/includes/database2diagram.php"
+  [32]=>
+  string(65) "/home/michael/workspace/SchemeRealizer/includes/diagram2class.php"
+  [33]=>
+  string(68) "/home/michael/workspace/SchemeRealizer/includes/diagram2database.php"
+  [34]=>
+  string(71) "/home/michael/workspace/SchemeRealizer/includes/diagram2mysqlExport.php"
+  [35]=>
+  string(72) "/home/michael/workspace/SchemeRealizer/includes/diagram2sqliteExport.php"
+  [36]=>
+  string(62) "/home/michael/workspace/SchemeRealizer/includes/getStarted.php"
+  [37]=>
+  string(71) "/home/michael/workspace/SchemeRealizer/includes/mongodbImport2class.php"
+  [38]=>
+  string(73) "/home/michael/workspace/SchemeRealizer/includes/mongodbImport2diagram.php"
+  [39]=>
+  string(69) "/home/michael/workspace/SchemeRealizer/includes/mysqlImport2class.php"
+  [40]=>
+  string(71) "/home/michael/workspace/SchemeRealizer/includes/mysqlImport2diagram.php"
+  [41]=>
+  string(70) "/home/michael/workspace/SchemeRealizer/includes/sqliteImport2class.php"
+  [42]=>
+  string(72) "/home/michael/workspace/SchemeRealizer/includes/sqliteImport2diagram.php"
+  [43]=>
+  string(62) "/home/michael/workspace/SchemeRealizer/includes/view/About.php"
+  [44]=>
+  string(63) "/home/michael/workspace/SchemeRealizer/includes/view/Config.php"
+  [45]=>
+  string(65) "/home/michael/workspace/SchemeRealizer/includes/view/Database.php"
+  [46]=>
+  string(68) "/home/michael/workspace/SchemeRealizer/includes/view/ProjectPath.php"
+  [47]=>
+  string(64) "/home/michael/workspace/SchemeRealizer/includes/view/toClass.php"
+  [48]=>
+  string(62) "/home/michael/workspace/SchemeRealizer/includes/view/toUML.php"
+  [49]=>
+  string(48) "/home/michael/workspace/SchemeRealizer/index.php"
+  [50]=>
+  string(58) "/home/michael/workspace/SchemeRealizer/native/Validate.php"
+  [51]=>
+  string(58) "/home/michael/workspace/SchemeRealizer/orm/mongodb_orm.php"
+  [52]=>
+  string(56) "/home/michael/workspace/SchemeRealizer/orm/mysql_orm.php"
+  [53]=>
+  string(57) "/home/michael/workspace/SchemeRealizer/orm/sqlite_orm.php"
+  [54]=>
+  string(56) "/home/michael/workspace/SchemeRealizer/php/php_parse.php"
+  [55]=>
+  string(53) "/home/michael/workspace/SchemeRealizer/req/config.php"
+  [56]=>
+  string(54) "/home/michael/workspace/SchemeRealizer/req/funcReq.php"
+  [57]=>
+  string(55) "/home/michael/workspace/SchemeRealizer/req/getClass.php"
+  [58]=>
+  string(53) "/home/michael/workspace/SchemeRealizer/req/getSQL.php"
+  [59]=>
+  string(53) "/home/michael/workspace/SchemeRealizer/req/getUML.php"
+  [60]=>
+  string(54) "/home/michael/workspace/SchemeRealizer/req/toClass.php"
+  [61]=>
+  string(57) "/home/michael/workspace/SchemeRealizer/req/toDatabase.php"
+  [62]=>
+  string(52) "/home/michael/workspace/SchemeRealizer/req/toUML.php"
+  [63]=>
+  string(56) "/home/michael/workspace/SchemeRealizer/schema/header.php"
+  [64]=>
+  string(65) "/home/michael/workspace/SchemeRealizer/schema/schemaexception.php"
+  [65]=>
+  string(61) "/home/michael/workspace/SchemeRealizer/schema/testing_cli.php"
+  [66]=>
+  string(73) "/home/michael/workspace/SchemeRealizer/testing/cli/Config_Schema_test.php"
+  [67]=>
+  string(69) "/home/michael/workspace/SchemeRealizer/testing/cli/Directory_test.php"
+  [68]=>
+  string(69) "/home/michael/workspace/SchemeRealizer/testing/cli/Including_test.php"
+  [69]=>
+  string(71) "/home/michael/workspace/SchemeRealizer/testing/cli/SQLiteDBGen_test.php"
+  [70]=>
+  string(78) "/home/michael/workspace/SchemeRealizer/testing/cli/classgen_interface_test.php"
+  [71]=>
+  string(67) "/home/michael/workspace/SchemeRealizer/testing/cli/classgentest.php"
+  [72]=>
+  string(77) "/home/michael/workspace/SchemeRealizer/testing/cli/defaultparamvalue_eval.php"
+  [73]=>
+  string(71) "/home/michael/workspace/SchemeRealizer/testing/cli/mongodb_orm_test.php"
+  [74]=>
+  string(67) "/home/michael/workspace/SchemeRealizer/testing/cli/nosqlgentest.php"
+  [75]=>
+  string(72) "/home/michael/workspace/SchemeRealizer/testing/cli/php_parse_compare.php"
+  [76]=>
+  string(70) "/home/michael/workspace/SchemeRealizer/testing/cli/php_parse_const.php"
+  [77]=>
+  string(74) "/home/michael/workspace/SchemeRealizer/testing/cli/php_parse_interface.php"
+  [78]=>
+  string(69) "/home/michael/workspace/SchemeRealizer/testing/cli/php_parse_test.php"
+  [79]=>
+  string(76) "/home/michael/workspace/SchemeRealizer/testing/cli/php_parse_token_error.php"
+  [80]=>
+  string(81) "/home/michael/workspace/SchemeRealizer/testing/cli/php_parse_token_order_test.php"
+  [81]=>
+  string(65) "/home/michael/workspace/SchemeRealizer/testing/cli/sqlgentest.php"
+  [82]=>
+  string(70) "/home/michael/workspace/SchemeRealizer/testing/cli/sqlite_orm_test.php"
+  [83]=>
+  string(72) "/home/michael/workspace/SchemeRealizer/testing/cli/sqlvalidationtest.php"
+  [84]=>
+  string(60) "/home/michael/workspace/SchemeRealizer/testing/cli/tests.php"
+  [85]=>
+  string(70) "/home/michael/workspace/SchemeRealizer/testing/cli/uml_parse_const.php"
+  [86]=>
+  string(74) "/home/michael/workspace/SchemeRealizer/testing/cli/uml_parse_interface.php"
+  [87]=>
+  string(69) "/home/michael/workspace/SchemeRealizer/testing/cli/uml_parse_test.php"
+  [88]=>
+  string(76) "/home/michael/workspace/SchemeRealizer/testing/cli/umlgen_interface_test.php"
+  [89]=>
+  string(65) "/home/michael/workspace/SchemeRealizer/testing/cli/umlgentest.php"
+  [90]=>
+  string(66) "/home/michael/workspace/SchemeRealizer/testing/unit/ArraysCase.php"
+  [91]=>
+  string(68) "/home/michael/workspace/SchemeRealizer/testing/unit/ClassGenCase.php"
+  [92]=>
+  string(69) "/home/michael/workspace/SchemeRealizer/testing/unit/DirectoryCase.php"
+  [93]=>
+  string(67) "/home/michael/workspace/SchemeRealizer/testing/unit/GlobalsCase.php"
+  [94]=>
+  string(72) "/home/michael/workspace/SchemeRealizer/testing/unit/MongoDB_ORM_Case.php"
+  [95]=>
+  string(67) "/home/michael/workspace/SchemeRealizer/testing/unit/ParsingCase.php"
+  [96]=>
+  string(66) "/home/michael/workspace/SchemeRealizer/testing/unit/SQLGenCase.php"
+  [97]=>
+  string(73) "/home/michael/workspace/SchemeRealizer/testing/unit/SQLValidationCase.php"
+  [98]=>
+  string(74) "/home/michael/workspace/SchemeRealizer/testing/unit/SchemeRealizerCase.php"
+  [99]=>
+  string(66) "/home/michael/workspace/SchemeRealizer/testing/unit/StringCase.php"
+  [100]=>
+  string(63) "/home/michael/workspace/SchemeRealizer/testing/unit/XMLCase.php"
+  [101]=>
+  string(67) "/home/michael/workspace/SchemeRealizer/testing/unit/prepArrCase.php"
+  [102]=>
+  string(56) "/home/michael/workspace/SchemeRealizer/uml/uml_parse.php"
+  [103]=>
+  string(55) "/home/michael/workspace/SchemeRealizer/utils/Arrays.php"
+  [104]=>
+  string(58) "/home/michael/workspace/SchemeRealizer/utils/Directory.php"
+  [105]=>
+  string(53) "/home/michael/workspace/SchemeRealizer/utils/File.php"
+  [106]=>
+  string(56) "/home/michael/workspace/SchemeRealizer/utils/Globals.php"
+  [107]=>
+  string(56) "/home/michael/workspace/SchemeRealizer/utils/Parsing.php"
+  [108]=>
+  string(55) "/home/michael/workspace/SchemeRealizer/utils/String.php"
+  [109]=>
+  string(52) "/home/michael/workspace/SchemeRealizer/utils/XML.php"
+}
+array(49) {
+  [0]=>
+  string(96) "/home/michael/workspace/SchemeRealizer/.metadata/.plugins/org.eclipse.jdt.core/javaLikeNames.txt"
+  [1]=>
+  string(98) "/home/michael/workspace/SchemeRealizer/.metadata/.plugins/org.eclipse.jdt.core/savedIndexNames.txt"
+  [2]=>
+  string(50) "/home/michael/workspace/SchemeRealizer/CONTACT.txt"
+  [3]=>
+  string(50) "/home/michael/workspace/SchemeRealizer/LICENSE.txt"
+  [4]=>
+  string(51) "/home/michael/workspace/SchemeRealizer/doc/NORM.txt"
+  [5]=>
+  string(70) "/home/michael/workspace/SchemeRealizer/doc/structure/ARRAY_BACKEND.txt"
+  [6]=>
+  string(71) "/home/michael/workspace/SchemeRealizer/doc/structure/ARRAY_FRONTEND.txt"
+  [7]=>
+  string(64) "/home/michael/workspace/SchemeRealizer/examples/UMLDirectory.txt"
+  [8]=>
+  string(63) "/home/michael/workspace/SchemeRealizer/examples/UMLEmployee.txt"
+  [9]=>
+  string(62) "/home/michael/workspace/SchemeRealizer/examples/UMLExample.txt"
+  [10]=>
+  string(64) "/home/michael/workspace/SchemeRealizer/examples/UMLIEmployee.txt"
+  [11]=>
+  string(60) "/home/michael/workspace/SchemeRealizer/examples/UMLIFace.txt"
+  [12]=>
+  string(59) "/home/michael/workspace/SchemeRealizer/examples/servers.txt"
+  [13]=>
+  string(66) "/home/michael/workspace/SchemeRealizer/examples/userUMLGenTest.txt"
+  [14]=>
+  string(58) "/home/michael/workspace/SchemeRealizer/globals/logging.txt"
+  [15]=>
+  string(55) "/home/michael/workspace/SchemeRealizer/globals/main.txt"
+  [16]=>
+  string(55) "/home/michael/workspace/SchemeRealizer/globals/test.txt"
+  [17]=>
+  string(53) "/home/michael/workspace/SchemeRealizer/issues/api.txt"
+  [18]=>
+  string(63) "/home/michael/workspace/SchemeRealizer/issues/documentation.txt"
+  [19]=>
+  string(66) "/home/michael/workspace/SchemeRealizer/issues/frontend_testing.txt"
+  [20]=>
+  string(52) "/home/michael/workspace/SchemeRealizer/issues/os.txt"
+  [21]=>
+  string(61) "/home/michael/workspace/SchemeRealizer/issues/version_1.1.txt"
+  [22]=>
+  string(61) "/home/michael/workspace/SchemeRealizer/issues/version_1.2.txt"
+  [23]=>
+  string(64) "/home/michael/workspace/SchemeRealizer/logging/execute_all_0.txt"
+  [24]=>
+  string(64) "/home/michael/workspace/SchemeRealizer/logging/execute_all_1.txt"
+  [25]=>
+  string(65) "/home/michael/workspace/SchemeRealizer/logging/execute_all_10.txt"
+  [26]=>
+  string(65) "/home/michael/workspace/SchemeRealizer/logging/execute_all_11.txt"
+  [27]=>
+  string(65) "/home/michael/workspace/SchemeRealizer/logging/execute_all_12.txt"
+  [28]=>
+  string(65) "/home/michael/workspace/SchemeRealizer/logging/execute_all_13.txt"
+  [29]=>
+  string(64) "/home/michael/workspace/SchemeRealizer/logging/execute_all_2.txt"
+  [30]=>
+  string(64) "/home/michael/workspace/SchemeRealizer/logging/execute_all_3.txt"
+  [31]=>
+  string(64) "/home/michael/workspace/SchemeRealizer/logging/execute_all_4.txt"
+  [32]=>
+  string(64) "/home/michael/workspace/SchemeRealizer/logging/execute_all_5.txt"
+  [33]=>
+  string(64) "/home/michael/workspace/SchemeRealizer/logging/execute_all_6.txt"
+  [34]=>
+  string(64) "/home/michael/workspace/SchemeRealizer/logging/execute_all_7.txt"
+  [35]=>
+  string(64) "/home/michael/workspace/SchemeRealizer/logging/execute_all_8.txt"
+  [36]=>
+  string(64) "/home/michael/workspace/SchemeRealizer/logging/execute_all_9.txt"
+  [37]=>
+  string(70) "/home/michael/workspace/SchemeRealizer/logging/execute_all_node_22.txt"
+  [38]=>
+  string(70) "/home/michael/workspace/SchemeRealizer/logging/execute_all_node_25.txt"
+  [39]=>
+  string(69) "/home/michael/workspace/SchemeRealizer/logging/execute_all_php_14.txt"
+  [40]=>
+  string(69) "/home/michael/workspace/SchemeRealizer/logging/execute_all_php_16.txt"
+  [41]=>
+  string(69) "/home/michael/workspace/SchemeRealizer/logging/execute_all_php_18.txt"
+  [42]=>
+  string(69) "/home/michael/workspace/SchemeRealizer/logging/execute_all_php_20.txt"
+  [43]=>
+  string(69) "/home/michael/workspace/SchemeRealizer/logging/execute_all_php_23.txt"
+  [44]=>
+  string(73) "/home/michael/workspace/SchemeRealizer/logging/execute_all_phpunit_15.txt"
+  [45]=>
+  string(73) "/home/michael/workspace/SchemeRealizer/logging/execute_all_phpunit_17.txt"
+  [46]=>
+  string(73) "/home/michael/workspace/SchemeRealizer/logging/execute_all_phpunit_19.txt"
+  [47]=>
+  string(73) "/home/michael/workspace/SchemeRealizer/logging/execute_all_phpunit_21.txt"
+  [48]=>
+  string(73) "/home/michael/workspace/SchemeRealizer/logging/execute_all_phpunit_24.txt"
+}
+
+-------------------------------
+###Including_test.php###
+
+
+-------------------------------
+###php_parse_compare.php###
+
+################################################################################
+### Compare token and reflection-based PHP-Parser
+################################################################################
+
+Test OK: 
+
+Token and Reflection-Parser are returning the same Array!
+
+-------------------------------
+###php_parse_test.php###
+
+PHP_Parser_TestClass - PHP-Reflection-Parser: 
+
+array(9) {
+  [0]=>
+  array(8) {
+    [0]=>
+    string(4) "var2"
+    [1]=>
+    int(1)
+    [2]=>
+    string(6) "public"
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(6) "static"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [1]=>
+  array(8) {
+    [0]=>
+    string(4) "var3"
+    [1]=>
+    int(1)
+    [2]=>
+    string(9) "protected"
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(6) "static"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [2]=>
+  array(8) {
+    [0]=>
+    string(7) "myconst"
+    [1]=>
+    int(1)
+    [2]=>
+    bool(false)
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(5) "const"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    array(3) {
+      [0]=>
+      string(7) "Michael"
+      [1]=>
+      string(6) "Watzer"
+      ["Family"]=>
+      array(4) {
+        [0]=>
+        string(8) "Stefanie"
+        [1]=>
+        string(6) "Watzer"
+        ["Mother"]=>
+        string(6) "Monika"
+        [2]=>
+        string(6) "Watzer"
+      }
+    }
+  }
+  [3]=>
+  array(8) {
+    [0]=>
+    string(8) "mysecond"
+    [1]=>
+    int(1)
+    [2]=>
+    bool(false)
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(5) "const"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    string(3) "val"
+  }
+  [4]=>
+  array(8) {
+    [0]=>
+    string(10) "thirdconst"
+    [1]=>
+    int(1)
+    [2]=>
+    bool(false)
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(5) "const"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    string(0) ""
+  }
+  [5]=>
+  array(8) {
+    [0]=>
+    string(14) "publicFunction"
+    [1]=>
+    int(2)
+    [2]=>
+    string(6) "public"
+    [3]=>
+    bool(false)
+    [4]=>
+    bool(false)
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    array(4) {
+      ["array $var1"]=>
+      NULL
+      ["callable $var2"]=>
+      NULL
+      ["ReflectionClass $rc"]=>
+      NULL
+      ["$person"]=>
+      array(2) {
+        [0]=>
+        string(14) "Michael Watzer"
+        [1]=>
+        int(22)
+      }
+    }
+  }
+  [6]=>
+  array(8) {
+    [0]=>
+    string(17) "protectedFunction"
+    [1]=>
+    int(2)
+    [2]=>
+    string(9) "protected"
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(6) "static"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [7]=>
+  array(8) {
+    [0]=>
+    string(15) "privateFunction"
+    [1]=>
+    int(2)
+    [2]=>
+    string(7) "private"
+    [3]=>
+    bool(false)
+    [4]=>
+    array(2) {
+      [0]=>
+      string(6) "static"
+      [1]=>
+      string(5) "final"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    array(3) {
+      ["$var1"]=>
+      NULL
+      ["$var2"]=>
+      NULL
+      ["callable $var3"]=>
+      NULL
+    }
+  }
+  [8]=>
+  array(8) {
+    [0]=>
+    string(20) "PHP_Parser_TestClass"
+    [1]=>
+    int(3)
+    [2]=>
+    bool(false)
+    [3]=>
+    bool(true)
+    [4]=>
+    bool(false)
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+}
+PHP_Parser_TestClass - PHP-Token-Parser: 
+
+array(9) {
+  [0]=>
+  array(8) {
+    [0]=>
+    string(7) "myconst"
+    [1]=>
+    int(1)
+    [2]=>
+    bool(false)
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(5) "const"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    array(3) {
+      [0]=>
+      string(7) "Michael"
+      [1]=>
+      string(6) "Watzer"
+      ["Family"]=>
+      array(4) {
+        [0]=>
+        string(8) "Stefanie"
+        [1]=>
+        string(6) "Watzer"
+        ["Mother"]=>
+        string(6) "Monika"
+        [2]=>
+        string(6) "Watzer"
+      }
+    }
+  }
+  [1]=>
+  array(8) {
+    [0]=>
+    string(8) "mysecond"
+    [1]=>
+    int(1)
+    [2]=>
+    bool(false)
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(5) "const"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    string(3) "val"
+  }
+  [2]=>
+  array(8) {
+    [0]=>
+    string(10) "thirdconst"
+    [1]=>
+    int(1)
+    [2]=>
+    bool(false)
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(5) "const"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    string(0) ""
+  }
+  [3]=>
+  array(8) {
+    [0]=>
+    string(4) "var2"
+    [1]=>
+    int(1)
+    [2]=>
+    string(6) "public"
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(6) "static"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [4]=>
+  array(8) {
+    [0]=>
+    string(4) "var3"
+    [1]=>
+    int(1)
+    [2]=>
+    string(9) "protected"
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(6) "static"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [5]=>
+  array(8) {
+    [0]=>
+    string(14) "publicFunction"
+    [1]=>
+    int(2)
+    [2]=>
+    string(6) "public"
+    [3]=>
+    bool(false)
+    [4]=>
+    bool(false)
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    array(4) {
+      ["array $var1"]=>
+      NULL
+      ["callable $var2"]=>
+      NULL
+      ["ReflectionClass $rc"]=>
+      NULL
+      ["$person"]=>
+      array(2) {
+        [0]=>
+        string(14) "Michael Watzer"
+        [1]=>
+        int(22)
+      }
+    }
+  }
+  [6]=>
+  array(8) {
+    [0]=>
+    string(17) "protectedFunction"
+    [1]=>
+    int(2)
+    [2]=>
+    string(9) "protected"
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(6) "static"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [7]=>
+  array(8) {
+    [0]=>
+    string(15) "privateFunction"
+    [1]=>
+    int(2)
+    [2]=>
+    string(7) "private"
+    [3]=>
+    bool(false)
+    [4]=>
+    array(2) {
+      [0]=>
+      string(6) "static"
+      [1]=>
+      string(5) "final"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    array(3) {
+      ["$var1"]=>
+      NULL
+      ["$var2"]=>
+      NULL
+      ["callable $var3"]=>
+      NULL
+    }
+  }
+  [8]=>
+  array(8) {
+    [0]=>
+    string(20) "PHP_Parser_TestClass"
+    [1]=>
+    int(3)
+    [2]=>
+    bool(false)
+    [3]=>
+    bool(true)
+    [4]=>
+    bool(false)
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+}
+ExtendsClass - PHP-Reflection-Parser: 
+
+array(8) {
+  [0]=>
+  array(8) {
+    [0]=>
+    string(4) "var2"
+    [1]=>
+    int(1)
+    [2]=>
+    string(6) "public"
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(6) "static"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [1]=>
+  array(8) {
+    [0]=>
+    string(4) "var3"
+    [1]=>
+    int(1)
+    [2]=>
+    string(9) "protected"
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(6) "static"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [2]=>
+  array(8) {
+    [0]=>
+    string(4) "var1"
+    [1]=>
+    int(1)
+    [2]=>
+    bool(false)
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(5) "const"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    string(4) "var1"
+  }
+  [3]=>
+  array(8) {
+    [0]=>
+    string(14) "publicFunction"
+    [1]=>
+    int(2)
+    [2]=>
+    string(6) "public"
+    [3]=>
+    bool(false)
+    [4]=>
+    bool(false)
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    array(4) {
+      ["array $var1"]=>
+      NULL
+      ["callable $var2"]=>
+      NULL
+      ["ReflectionClass $rc"]=>
+      NULL
+      ["$person"]=>
+      array(2) {
+        [0]=>
+        string(14) "Michael Watzer"
+        [1]=>
+        int(22)
+      }
+    }
+  }
+  [4]=>
+  array(8) {
+    [0]=>
+    string(17) "protectedFunction"
+    [1]=>
+    int(2)
+    [2]=>
+    string(9) "protected"
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(6) "static"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [5]=>
+  array(8) {
+    [0]=>
+    string(15) "privateFunction"
+    [1]=>
+    int(2)
+    [2]=>
+    string(7) "private"
+    [3]=>
+    bool(false)
+    [4]=>
+    array(2) {
+      [0]=>
+      string(6) "static"
+      [1]=>
+      string(5) "final"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    array(3) {
+      ["$var1"]=>
+      NULL
+      ["$var2"]=>
+      NULL
+      ["callable $var3"]=>
+      NULL
+    }
+  }
+  [6]=>
+  array(8) {
+    [0]=>
+    string(16) "abstractFunction"
+    [1]=>
+    int(2)
+    [2]=>
+    string(6) "public"
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(8) "abstract"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [7]=>
+  array(8) {
+    [0]=>
+    string(12) "ExtendsClass"
+    [1]=>
+    int(3)
+    [2]=>
+    bool(false)
+    [3]=>
+    bool(true)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(8) "abstract"
+    }
+    [5]=>
+    array(1) {
+      [0]=>
+      array(2) {
+        [0]=>
+        string(11) "ParentClass"
+        [1]=>
+        bool(true)
+      }
+    }
+    [6]=>
+    array(2) {
+      [0]=>
+      string(6) "iFace2"
+      [1]=>
+      bool(true)
+    }
+    [7]=>
+    bool(false)
+  }
+}
+ExtendsClass - PHP-Token-Parser: 
+
+array(8) {
+  [0]=>
+  array(8) {
+    [0]=>
+    string(4) "var1"
+    [1]=>
+    int(1)
+    [2]=>
+    bool(false)
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(5) "const"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    string(4) "var1"
+  }
+  [1]=>
+  array(8) {
+    [0]=>
+    string(4) "var2"
+    [1]=>
+    int(1)
+    [2]=>
+    string(6) "public"
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(6) "static"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [2]=>
+  array(8) {
+    [0]=>
+    string(4) "var3"
+    [1]=>
+    int(1)
+    [2]=>
+    string(9) "protected"
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(6) "static"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [3]=>
+  array(8) {
+    [0]=>
+    string(14) "publicFunction"
+    [1]=>
+    int(2)
+    [2]=>
+    string(6) "public"
+    [3]=>
+    bool(false)
+    [4]=>
+    bool(false)
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    array(4) {
+      ["array $var1"]=>
+      NULL
+      ["callable $var2"]=>
+      NULL
+      ["ReflectionClass $rc"]=>
+      NULL
+      ["$person"]=>
+      array(2) {
+        [0]=>
+        string(14) "Michael Watzer"
+        [1]=>
+        int(22)
+      }
+    }
+  }
+  [4]=>
+  array(8) {
+    [0]=>
+    string(17) "protectedFunction"
+    [1]=>
+    int(2)
+    [2]=>
+    string(9) "protected"
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(6) "static"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [5]=>
+  array(8) {
+    [0]=>
+    string(15) "privateFunction"
+    [1]=>
+    int(2)
+    [2]=>
+    string(7) "private"
+    [3]=>
+    bool(false)
+    [4]=>
+    array(2) {
+      [0]=>
+      string(6) "static"
+      [1]=>
+      string(5) "final"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    array(3) {
+      ["$var1"]=>
+      NULL
+      ["$var2"]=>
+      NULL
+      ["callable $var3"]=>
+      NULL
+    }
+  }
+  [6]=>
+  array(8) {
+    [0]=>
+    string(16) "abstractFunction"
+    [1]=>
+    int(2)
+    [2]=>
+    string(6) "public"
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(8) "abstract"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [7]=>
+  array(8) {
+    [0]=>
+    string(12) "ExtendsClass"
+    [1]=>
+    int(3)
+    [2]=>
+    bool(false)
+    [3]=>
+    bool(true)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(8) "abstract"
+    }
+    [5]=>
+    array(1) {
+      [0]=>
+      array(2) {
+        [0]=>
+        string(11) "ParentClass"
+        [1]=>
+        bool(true)
+      }
+    }
+    [6]=>
+    array(1) {
+      [0]=>
+      array(2) {
+        [0]=>
+        string(6) "iFace2"
+        [1]=>
+        bool(true)
+      }
+    }
+    [7]=>
+    bool(false)
+  }
+}
+
+-------------------------------
+###sqlite_orm_test.php###
+
+Comments: FhCId INode Comment Date 
+
+-------------------------------
+###sqlvalidationtest.php###
+
+MySQL-Test:
+
+sqlvalidation: Array has empty elements!
+sqlvalidation: name: Overruns the max. size of 21844!
+sqlvalidation: name: Size is smaller than 1!
+sqlvalidation: name: Invalid NULL value!
+sqlvalidation: name: Invalid AUTO_INCREMENT value!
+sqlvalidation: kunde: Invalid Index value!
+sqlvalidation: Multiple AUTOINCREMENT-Tagged Columns!
+sglvalidation: id: AUTO_INCREMENT tagged field isn't a number/float!
+sqlvalidation: id: Element duplication!
+sqlvalidation: plz: is tagged as a key, but has no key length!
+sqlvalidation: plz: Overruns the max. size of 65 at m!
+sqlvalidation: plz: Overruns the max. size of 30 at d!
+sqlvalidation: Multiple AUTOINCREMENT-Tagged Columns!
+sqlvalidation: plz: Size is not numeric!
+sqlvalidation: plz: Size is not numeric!
+sqlvalidation: plz: Size is not numeric!
+sqlvalidation: name: Overruns the max. index size of 767!
+SQLite-Test:
+
+sqlvalidation: AUTOINCREMENT-Column id has to be an INTEGER!
+sqlvalidation: time is a forbidden data type!
+sqlvalidation: id: Invalid NULL value!
+sqlvalidation: id: Invalid AUTO_INCREMENT value!
+sqlvalidation: name: Invalid Index value!
+sqlvalidation: Multiple AUTOINCREMENT-Tagged Columns!
+sqlvalidation: AUTOINCREMENT-Column id has to be tagged as Primary-Key!
+sqlvalidation: AUTOINCREMENT-Column id has to be an INTEGER!
+sqlvalidation: AUTOINCREMENT: Primary-Key duplication!
+sqlvalidation: name: Element duplication!
+
+-------------------------------
+###umlgentest.php###
+
+<<class>>
+ExtendsClass
+{abstract}
+extends => /path/to/parent:ParentClass
+implements => /path/to/interface1:iFace2
+----------------------------------------
+var1 = 'var1' {const}
++ var2 {static}
+# var3 {static}
+----------------------------------------
++ publicFunction(array $var1, callable $var2, ReflectionClass $rc, $person = array('Michael Watzer', '22'))
+# protectedFunction() {static}
+- privateFunction($var1, $var2, callable $var3) {static,final}
++ abstractFunction() {abstract}
+
+-------------------------------
+###uml_parse_test.php###
+
+../../examples/UMLEmployee.txt
+array(6) {
+  [0]=>
+  array(8) {
+    [0]=>
+    string(5) "empid"
+    [1]=>
+    int(1)
+    [2]=>
+    bool(false)
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(5) "const"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    array(3) {
+      [0]=>
+      string(7) "Michael"
+      [1]=>
+      string(6) "Watzer"
+      ["Family"]=>
+      array(2) {
+        [0]=>
+        string(6) "Monika"
+        [1]=>
+        string(8) "Stefanie"
+      }
+    }
+  }
+  [1]=>
+  array(8) {
+    [0]=>
+    string(9) "firstname"
+    [1]=>
+    int(1)
+    [2]=>
+    string(9) "protected"
+    [3]=>
+    bool(false)
+    [4]=>
+    bool(false)
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [2]=>
+  array(8) {
+    [0]=>
+    string(8) "lastname"
+    [1]=>
+    int(1)
+    [2]=>
+    string(7) "private"
+    [3]=>
+    bool(false)
+    [4]=>
+    bool(false)
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [3]=>
+  array(8) {
+    [0]=>
+    string(10) "getCompany"
+    [1]=>
+    int(4)
+    [2]=>
+    string(9) "protected"
+    [3]=>
+    bool(false)
+    [4]=>
+    array(2) {
+      [0]=>
+      string(6) "static"
+      [1]=>
+      string(5) "final"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    array(3) {
+      ["$name"]=>
+      NULL
+      ["array $employees"]=>
+      array(2) {
+        [0]=>
+        string(7) "Michael"
+        [1]=>
+        string(6) "Watzer"
+      }
+      ["callable $func"]=>
+      NULL
+    }
+  }
+  [4]=>
+  array(8) {
+    [0]=>
+    string(9) "getPerson"
+    [1]=>
+    int(4)
+    [2]=>
+    string(6) "public"
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(8) "abstract"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [5]=>
+  array(8) {
+    [0]=>
+    string(8) "Employee"
+    [1]=>
+    int(5)
+    [2]=>
+    bool(false)
+    [3]=>
+    bool(true)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(8) "abstract"
+    }
+    [5]=>
+    array(1) {
+      ["/path/to/Person.php"]=>
+      array(2) {
+        [0]=>
+        string(6) "Person"
+        [1]=>
+        bool(true)
+      }
+    }
+    [6]=>
+    array(2) {
+      [0]=>
+      array(1) {
+        ["/path/to/IPerson.php"]=>
+        array(2) {
+          [0]=>
+          string(7) "IPerson"
+          [1]=>
+          bool(true)
+        }
+      }
+      [1]=>
+      array(1) {
+        ["/path/to/IHuman.php"]=>
+        array(2) {
+          [0]=>
+          string(6) "IHuman"
+          [1]=>
+          bool(true)
+        }
+      }
+    }
+    [7]=>
+    bool(false)
+  }
+}
+../../examples/UMLDirectory.txt
+array(11) {
+  [0]=>
+  array(8) {
+    [0]=>
+    string(5) "files"
+    [1]=>
+    int(1)
+    [2]=>
+    string(7) "private"
+    [3]=>
+    bool(false)
+    [4]=>
+    bool(false)
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [1]=>
+  array(8) {
+    [0]=>
+    string(4) "root"
+    [1]=>
+    int(1)
+    [2]=>
+    string(7) "private"
+    [3]=>
+    bool(false)
+    [4]=>
+    bool(false)
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [2]=>
+  array(8) {
+    [0]=>
+    string(9) "extension"
+    [1]=>
+    int(1)
+    [2]=>
+    string(7) "private"
+    [3]=>
+    bool(false)
+    [4]=>
+    bool(false)
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [3]=>
+  array(8) {
+    [0]=>
+    string(11) "__construct"
+    [1]=>
+    int(4)
+    [2]=>
+    string(6) "public"
+    [3]=>
+    bool(false)
+    [4]=>
+    bool(false)
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    array(2) {
+      ["$root"]=>
+      NULL
+      ["$extension"]=>
+      NULL
+    }
+  }
+  [4]=>
+  array(8) {
+    [0]=>
+    string(8) "getFiles"
+    [1]=>
+    int(4)
+    [2]=>
+    string(6) "public"
+    [3]=>
+    bool(false)
+    [4]=>
+    bool(false)
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [5]=>
+  array(8) {
+    [0]=>
+    string(8) "setFiles"
+    [1]=>
+    int(4)
+    [2]=>
+    string(6) "public"
+    [3]=>
+    bool(false)
+    [4]=>
+    bool(false)
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [6]=>
+  array(8) {
+    [0]=>
+    string(7) "getRoot"
+    [1]=>
+    int(4)
+    [2]=>
+    string(6) "public"
+    [3]=>
+    bool(false)
+    [4]=>
+    bool(false)
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [7]=>
+  array(8) {
+    [0]=>
+    string(7) "setRoot"
+    [1]=>
+    int(4)
+    [2]=>
+    string(6) "public"
+    [3]=>
+    bool(false)
+    [4]=>
+    bool(false)
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    array(1) {
+      ["$root"]=>
+      NULL
+    }
+  }
+  [8]=>
+  array(8) {
+    [0]=>
+    string(12) "getExtension"
+    [1]=>
+    int(4)
+    [2]=>
+    string(6) "public"
+    [3]=>
+    bool(false)
+    [4]=>
+    bool(false)
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [9]=>
+  array(8) {
+    [0]=>
+    string(12) "setExtension"
+    [1]=>
+    int(4)
+    [2]=>
+    string(6) "public"
+    [3]=>
+    bool(false)
+    [4]=>
+    bool(false)
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    array(1) {
+      ["$extension"]=>
+      NULL
+    }
+  }
+  [10]=>
+  array(8) {
+    [0]=>
+    string(9) "Directory"
+    [1]=>
+    int(5)
+    [2]=>
+    bool(false)
+    [3]=>
+    bool(true)
+    [4]=>
+    bool(false)
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+}
+
+-------------------------------
+###php_parse_interface.php###
+
+################################################################################
+### Reflection-based parser
+################################################################################
+array(4) {
+  [0]=>
+  array(8) {
+    [0]=>
+    string(14) "publicFunction"
+    [1]=>
+    int(2)
+    [2]=>
+    string(6) "public"
+    [3]=>
+    bool(false)
+    [4]=>
+    bool(false)
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    array(4) {
+      ["array $var1"]=>
+      NULL
+      ["callable $var2"]=>
+      NULL
+      ["ReflectionClass $rc"]=>
+      NULL
+      ["$person"]=>
+      array(2) {
+        [0]=>
+        string(14) "Michael Watzer"
+        [1]=>
+        int(22)
+      }
+    }
+  }
+  [1]=>
+  array(8) {
+    [0]=>
+    string(17) "protectedFunction"
+    [1]=>
+    int(2)
+    [2]=>
+    string(6) "public"
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(6) "static"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    array(1) {
+      ["array $members"]=>
+      array(1) {
+        ["Family"]=>
+        array(1) {
+          ["brothers and sisters"]=>
+          array(2) {
+            [0]=>
+            string(8) "Stefanie"
+            [1]=>
+            string(7) "Michael"
+          }
+        }
+      }
+    }
+  }
+  [2]=>
+  array(8) {
+    [0]=>
+    string(15) "privateFunction"
+    [1]=>
+    int(2)
+    [2]=>
+    string(6) "public"
+    [3]=>
+    bool(false)
+    [4]=>
+    bool(false)
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    array(3) {
+      ["$var1"]=>
+      NULL
+      ["$var2"]=>
+      NULL
+      ["callable $var3"]=>
+      NULL
+    }
+  }
+  [3]=>
+  array(8) {
+    [0]=>
+    string(24) "PHP_Parser_TestInterface"
+    [1]=>
+    int(4)
+    [2]=>
+    bool(false)
+    [3]=>
+    bool(true)
+    [4]=>
+    bool(false)
+    [5]=>
+    array(1) {
+      [0]=>
+      array(2) {
+        [0]=>
+        string(6) "iFace1"
+        [1]=>
+        bool(true)
+      }
+    }
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+}
+################################################################################
+### Token-based Parser
+################################################################################
+array(4) {
+  [0]=>
+  array(8) {
+    [0]=>
+    string(14) "publicFunction"
+    [1]=>
+    int(2)
+    [2]=>
+    string(6) "public"
+    [3]=>
+    bool(false)
+    [4]=>
+    bool(false)
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    array(4) {
+      ["array $var1"]=>
+      NULL
+      ["callable $var2"]=>
+      NULL
+      ["ReflectionClass $rc"]=>
+      NULL
+      ["$person"]=>
+      array(2) {
+        [0]=>
+        string(14) "Michael Watzer"
+        [1]=>
+        int(22)
+      }
+    }
+  }
+  [1]=>
+  array(8) {
+    [0]=>
+    string(17) "protectedFunction"
+    [1]=>
+    int(2)
+    [2]=>
+    string(6) "public"
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(6) "static"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    array(1) {
+      ["array $members"]=>
+      array(1) {
+        ["Family"]=>
+        array(1) {
+          ["brothers and sisters"]=>
+          array(2) {
+            [0]=>
+            string(8) "Stefanie"
+            [1]=>
+            string(7) "Michael"
+          }
+        }
+      }
+    }
+  }
+  [2]=>
+  array(8) {
+    [0]=>
+    string(15) "privateFunction"
+    [1]=>
+    int(2)
+    [2]=>
+    string(6) "public"
+    [3]=>
+    bool(false)
+    [4]=>
+    bool(false)
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    array(3) {
+      ["$var1"]=>
+      NULL
+      ["$var2"]=>
+      NULL
+      ["callable $var3"]=>
+      NULL
+    }
+  }
+  [3]=>
+  array(8) {
+    [0]=>
+    string(24) "PHP_Parser_TestInterface"
+    [1]=>
+    int(4)
+    [2]=>
+    bool(false)
+    [3]=>
+    bool(true)
+    [4]=>
+    bool(false)
+    [5]=>
+    array(1) {
+      [0]=>
+      array(2) {
+        [0]=>
+        string(6) "iFace1"
+        [1]=>
+        bool(true)
+      }
+    }
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+}
+################################################################################
+### Compare reflection-based Parser and token-based Parser
+################################################################################
+OK!
+
+-------------------------------
+###uml_parse_interface.php###
+
+array(3) {
+  [0]=>
+  array(8) {
+    [0]=>
+    string(10) "getCompany"
+    [1]=>
+    int(4)
+    [2]=>
+    bool(false)
+    [3]=>
+    bool(false)
+    [4]=>
+    bool(false)
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    array(3) {
+      ["$name"]=>
+      NULL
+      ["array $employees"]=>
+      array(2) {
+        [0]=>
+        string(7) "Michael"
+        [1]=>
+        string(6) "Watzer"
+      }
+      ["callable $func"]=>
+      NULL
+    }
+  }
+  [1]=>
+  array(8) {
+    [0]=>
+    string(9) "getPerson"
+    [1]=>
+    int(4)
+    [2]=>
+    bool(false)
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(6) "static"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [2]=>
+  array(8) {
+    [0]=>
+    string(8) "Employee"
+    [1]=>
+    int(6)
+    [2]=>
+    bool(false)
+    [3]=>
+    bool(true)
+    [4]=>
+    bool(false)
+    [5]=>
+    array(1) {
+      ["/path/to/IPerson.php"]=>
+      array(2) {
+        [0]=>
+        string(7) "IPerson"
+        [1]=>
+        bool(true)
+      }
+    }
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+}
+
+-------------------------------
+###classgen_interface_test.php###
+
+################################################################################
+### ../../examples/UMLIEmployee.txt
+################################################################################
+<?php
+
+include_once '/path/to/IPerson.php';
+interface Employee extends IPerson {
+
+	function getCompany($name, array $employees = array('Michael', 'Watzer'), callable $func);
+	static function getPerson();
+
+}
+
+?>
+################################################################################
+### ../../examples/UMLIFace.txt
+################################################################################
+<?php
+
+include_once '/path/to/parent';
+interface MyInterface extends ParentInterface {
+
+	static function setName($name = 'Michael');
+	function getName();
+
+}
+
+?>
+-------------------------------
+###nosqlgentest.php###
+
+use SchemeTest
+db.createCollection('sqlgencheck',{capped:true
+, size:1
+})
+db.sqlgencheck.insert({
+"name":"chris", "added":"new", "newone":1, "newone":{
+"objkey1":{
+"objkey1_1":{
+"objkey1_1_1":"val", "objkey1_1_2":"val", "objkey1_1_3":"val"
+}
+, "objkey1_2":"val"
+}
+
+}
+, "ARR1":[{
+"key":"Str"
+}, "2arrwert"], "ARR2":[{
+"inner":"Obj", "nextinn":"OBJIC"
+}, "vat"], "ARR3":[{
+"arrinner":["innerhalb1", "innerhalb2"], "inner":"Obj", "nextinn":"OBJIC"
+}, "vat"]
+})	
+-------------------------------
+###php_parse_const.php###
+
+################################################################################
+### PHP_Parser_TestClass - PHP-Reflection-Parser
+################################################################################
+array(5) {
+  [0]=>
+  array(8) {
+    [0]=>
+    string(4) "var2"
+    [1]=>
+    int(1)
+    [2]=>
+    string(6) "public"
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(6) "static"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [1]=>
+  array(8) {
+    [0]=>
+    string(4) "var3"
+    [1]=>
+    int(1)
+    [2]=>
+    string(9) "protected"
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(6) "static"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [2]=>
+  array(8) {
+    [0]=>
+    string(7) "myconst"
+    [1]=>
+    int(1)
+    [2]=>
+    bool(false)
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(5) "const"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    array(3) {
+      [0]=>
+      string(7) "Michael"
+      [1]=>
+      string(6) "Watzer"
+      ["Family"]=>
+      array(4) {
+        [0]=>
+        string(8) "Stefanie"
+        [1]=>
+        string(6) "Watzer"
+        ["Mother"]=>
+        string(6) "Monika"
+        [2]=>
+        string(6) "Watzer"
+      }
+    }
+  }
+  [3]=>
+  array(8) {
+    [0]=>
+    string(8) "mysecond"
+    [1]=>
+    int(1)
+    [2]=>
+    bool(false)
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(5) "const"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    string(3) "val"
+  }
+  [4]=>
+  array(8) {
+    [0]=>
+    string(10) "thirdconst"
+    [1]=>
+    int(1)
+    [2]=>
+    bool(false)
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(5) "const"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    string(0) ""
+  }
+}
+################################################################################
+### PHP_Parser_TestClass - PHP-Token-Parser
+################################################################################
+array(5) {
+  [0]=>
+  array(8) {
+    [0]=>
+    string(7) "myconst"
+    [1]=>
+    int(1)
+    [2]=>
+    bool(false)
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(5) "const"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    array(3) {
+      [0]=>
+      string(7) "Michael"
+      [1]=>
+      string(6) "Watzer"
+      ["Family"]=>
+      array(4) {
+        [0]=>
+        string(8) "Stefanie"
+        [1]=>
+        string(6) "Watzer"
+        ["Mother"]=>
+        string(6) "Monika"
+        [2]=>
+        string(6) "Watzer"
+      }
+    }
+  }
+  [1]=>
+  array(8) {
+    [0]=>
+    string(8) "mysecond"
+    [1]=>
+    int(1)
+    [2]=>
+    bool(false)
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(5) "const"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    string(3) "val"
+  }
+  [2]=>
+  array(8) {
+    [0]=>
+    string(10) "thirdconst"
+    [1]=>
+    int(1)
+    [2]=>
+    bool(false)
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(5) "const"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    string(0) ""
+  }
+  [3]=>
+  array(8) {
+    [0]=>
+    string(4) "var2"
+    [1]=>
+    int(1)
+    [2]=>
+    string(6) "public"
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(6) "static"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [4]=>
+  array(8) {
+    [0]=>
+    string(4) "var3"
+    [1]=>
+    int(1)
+    [2]=>
+    string(9) "protected"
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(6) "static"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+}
+
+-------------------------------
+###uml_parse_const.php###
+
+################################################################################
+### Parsing ../../examples/UMLEmployee.txt
+################################################################################
+array(6) {
+  [0]=>
+  array(8) {
+    [0]=>
+    string(5) "empid"
+    [1]=>
+    int(1)
+    [2]=>
+    bool(false)
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(5) "const"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    array(3) {
+      [0]=>
+      string(7) "Michael"
+      [1]=>
+      string(6) "Watzer"
+      ["Family"]=>
+      array(2) {
+        [0]=>
+        string(6) "Monika"
+        [1]=>
+        string(8) "Stefanie"
+      }
+    }
+  }
+  [1]=>
+  array(8) {
+    [0]=>
+    string(9) "firstname"
+    [1]=>
+    int(1)
+    [2]=>
+    string(9) "protected"
+    [3]=>
+    bool(false)
+    [4]=>
+    bool(false)
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [2]=>
+  array(8) {
+    [0]=>
+    string(8) "lastname"
+    [1]=>
+    int(1)
+    [2]=>
+    string(7) "private"
+    [3]=>
+    bool(false)
+    [4]=>
+    bool(false)
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [3]=>
+  array(8) {
+    [0]=>
+    string(10) "getCompany"
+    [1]=>
+    int(4)
+    [2]=>
+    string(9) "protected"
+    [3]=>
+    bool(false)
+    [4]=>
+    array(2) {
+      [0]=>
+      string(6) "static"
+      [1]=>
+      string(5) "final"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    array(3) {
+      ["$name"]=>
+      NULL
+      ["array $employees"]=>
+      array(2) {
+        [0]=>
+        string(7) "Michael"
+        [1]=>
+        string(6) "Watzer"
+      }
+      ["callable $func"]=>
+      NULL
+    }
+  }
+  [4]=>
+  array(8) {
+    [0]=>
+    string(9) "getPerson"
+    [1]=>
+    int(4)
+    [2]=>
+    string(6) "public"
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(8) "abstract"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [5]=>
+  array(8) {
+    [0]=>
+    string(8) "Employee"
+    [1]=>
+    int(5)
+    [2]=>
+    bool(false)
+    [3]=>
+    bool(true)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(8) "abstract"
+    }
+    [5]=>
+    array(1) {
+      ["/path/to/Person.php"]=>
+      array(2) {
+        [0]=>
+        string(6) "Person"
+        [1]=>
+        bool(true)
+      }
+    }
+    [6]=>
+    array(2) {
+      [0]=>
+      array(1) {
+        ["/path/to/IPerson.php"]=>
+        array(2) {
+          [0]=>
+          string(7) "IPerson"
+          [1]=>
+          bool(true)
+        }
+      }
+      [1]=>
+      array(1) {
+        ["/path/to/IHuman.php"]=>
+        array(2) {
+          [0]=>
+          string(6) "IHuman"
+          [1]=>
+          bool(true)
+        }
+      }
+    }
+    [7]=>
+    bool(false)
+  }
+}
+
+-------------------------------
+###php_parse_token_order_test.php###
+
+array(8) {
+  [0]=>
+  array(8) {
+    [0]=>
+    string(11) "staticOrder"
+    [1]=>
+    int(1)
+    [2]=>
+    string(7) "private"
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(6) "static"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [1]=>
+  array(8) {
+    [0]=>
+    string(11) "normalOrder"
+    [1]=>
+    int(1)
+    [2]=>
+    string(7) "private"
+    [3]=>
+    bool(false)
+    [4]=>
+    array(1) {
+      [0]=>
+      string(6) "static"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [2]=>
+  array(8) {
+    [0]=>
+    string(11) "normalOrder"
+    [1]=>
+    int(2)
+    [2]=>
+    string(6) "public"
+    [3]=>
+    bool(false)
+    [4]=>
+    array(2) {
+      [0]=>
+      string(6) "static"
+      [1]=>
+      string(5) "final"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [3]=>
+  array(8) {
+    [0]=>
+    string(11) "staticOrder"
+    [1]=>
+    int(2)
+    [2]=>
+    string(6) "public"
+    [3]=>
+    bool(false)
+    [4]=>
+    array(2) {
+      [0]=>
+      string(6) "static"
+      [1]=>
+      string(5) "final"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [4]=>
+  array(8) {
+    [0]=>
+    string(10) "finalOrder"
+    [1]=>
+    int(2)
+    [2]=>
+    string(6) "public"
+    [3]=>
+    bool(false)
+    [4]=>
+    array(2) {
+      [0]=>
+      string(5) "final"
+      [1]=>
+      string(6) "static"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [5]=>
+  array(8) {
+    [0]=>
+    string(12) "staticOrder2"
+    [1]=>
+    int(2)
+    [2]=>
+    string(6) "public"
+    [3]=>
+    bool(false)
+    [4]=>
+    array(2) {
+      [0]=>
+      string(6) "static"
+      [1]=>
+      string(5) "final"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [6]=>
+  array(8) {
+    [0]=>
+    string(11) "finalOrder2"
+    [1]=>
+    int(2)
+    [2]=>
+    string(6) "public"
+    [3]=>
+    bool(false)
+    [4]=>
+    array(2) {
+      [0]=>
+      string(5) "final"
+      [1]=>
+      string(6) "static"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+  [7]=>
+  array(8) {
+    [0]=>
+    string(12) "normalOrder2"
+    [1]=>
+    int(2)
+    [2]=>
+    string(6) "public"
+    [3]=>
+    bool(false)
+    [4]=>
+    array(2) {
+      [0]=>
+      string(5) "final"
+      [1]=>
+      string(6) "static"
+    }
+    [5]=>
+    bool(false)
+    [6]=>
+    bool(false)
+    [7]=>
+    bool(false)
+  }
+}
+
+-------------------------------
+###php_parse_token_error.php###
+
+php_parse: found keyword extends after keyword implements!

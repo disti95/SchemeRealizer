@@ -1,0 +1,10 @@
+## Warning
+ - shell script's
+ - directories/files
+ - .htaccess(pretty-url)
+ - native OS calls
+
+## Integration test
+ - Linux
+ - Apple
+ - Windows

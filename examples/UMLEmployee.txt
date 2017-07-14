@@ -1,0 +1,12 @@
+<<class>>
+Employee
+{abstract}
+extends => /path/to/Person.php:Person
+implements => /path/to/IPerson.php:IPerson, /path/to/IHuman.php:IHuman
+------------------------
+empid = array('Michael', 'Watzer', 'Family' => array('Monika', 'Stefanie')) {const}
+# firstname = array('Michael', 'Klaus', 'Karl')
+- lastname  = 'Watzer'
+-------------------------
+# getCompany($name, array $employees = array('Michael', 'Watzer'), callable $func) {static, final}
++ getPerson() {abstract}

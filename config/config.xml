@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+SchemeRealizer - A free ORM and Translator for Diagrams, Databases and PHP-Classes/Interfaces.
+Copyright (C) 2016  Michael Watzer
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ -->
+<!-- @author   Michael Watzer         -->
+<!-- @version  1.1                    -->
+<!-- @category XML Configuration-File -->
+<!-- @since    ?                      -->
+<config xmlns="http://www.schemerealizer.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.schemerealizer.com config.xsd">
+  <paths>
+    <class>../clflush</class>
+    <uml>../umlflush</uml>
+    <sql>../sqlflush</sql>
+    <originclass>../clflush</originclass>
+    <originuml>../umlflush</originuml>
+    <originsql>../sqlflush</originsql>
+  </paths>
+  <parser>
+  	 <classparser>token</classparser>
+  	 <originclassparser>token</originclassparser>
+  </parser>
+  <project>
+  	<path>/home/michael/workspace/SchemeRealizer/examples</path>
+  	<originpath>/home/michael/workspace/SchemeRealizer/examples</originpath>
+  </project>
+  <dsn>
+  	<host>localhost</host>
+  	<user>root</user>
+  	<db>mysql</db>
+  	<originhost>localhost</originhost>
+  	<originuser>root</originuser>
+  	<origindb>mysql</origindb>
+  </dsn>
+</config>

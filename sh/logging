@@ -1,0 +1,171 @@
+#!/bin/bash
+
+#SchemeRealizer - A free ORM and Translator for Diagrams, Databases and PHP-Classes/Interfaces.
+#Copyright (C) 2016  Michael Watzer/Christian Dittrich
+
+#This program is free software: you can redistribute it and/or modify
+#it under the terms of the GNU Affero General Public License as published by
+#the Free Software Foundation, either version 3 of the License, or
+#(at your option) any later version.
+
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU Affero General Public License for more details.
+
+#You should have received a copy of the GNU Affero General Public License
+#along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+################################################################################
+# @author   Michael Watzer                                                     #
+# @version  1.0                                                                #
+# @since    01.04.2017                                                         #
+# @category Cronjob script for the logging system                              #
+################################################################################
+
+################################################################################
+### Recommended cronjob entry: 
+###   0 22 * * 7 $HOME/workspace/SchemeRealizer/sh/logging -push
+################################################################################
+
+################################################################################
+### Declare variables
+################################################################################
+
+execute[0]="classgentest.php"
+execute[1]="Config_Schema_test.php"
+execute[2]="defaultparamvalue_eval.php"
+execute[3]="Directory_test.php"
+execute[4]="Including_test.php"
+execute[5]="php_parse_compare.php"
+execute[6]="php_parse_test.php"
+execute[7]="sqlite_orm_test.php"
+execute[8]="sqlvalidationtest.php"
+execute[9]="umlgentest.php"
+execute[10]="uml_parse_test.php"
+execute[11]="php_parse_interface.php"
+execute[12]="uml_parse_interface.php"
+execute[13]="classgen_interface_test.php"
+execute[14]="nosqlgentest.php"
+execute[15]="php_parse_const.php"
+execute[16]="uml_parse_const.php"
+execute[17]="php_parse_token_order_test.php"
+execute[18]="php_parse_token_error.php"
+execute_unit[0]="ArraysCase.php"
+execute_unit[1]="ClassGenCase.php"
+execute_unit[2]="ParsingCase.php"
+execute_unit[3]="prepArrCase.php"
+execute_unit[4]="SQLGenCase.php"
+exeucte_unit[5]="StringCase.php"
+execute_unit[6]="XMLCase.php"
+execute_unit[7]="GlobalsCase.php"
+execute_unit[8]="SQLValidationCase.php"
+execute_unit[9]="SchemeRealizerCase.php"
+execute_unit[10]="DirectoryCase.php"
+execute_unit[11]="ORMCase.php"
+execute_js[0]="lib_test.js"
+
+workdir=~/workspace/SchemeRealizer
+clidir=$workdir/testing/cli
+unitdir=$workdir/testing/unit
+jsdir=$workdir/js/testing
+executer=../../controlling/execute_all.php
+depth=2
+filestr=""
+filestr_unit=""
+filestr_js=""
+
+################################################################################
+### Main
+################################################################################
+
+if [ -z $(which git) ]; then
+  echo "unable to find git!"
+  exit 1
+fi
+
+if [ -z $(which php) ]; then
+  echo "unable to find php!"
+  exit 1
+fi
+
+if [ -z $(which phpunit) ]; then
+  echo "unable to find phpunit!"
+  exit 1
+fi
+
+if [ -z $(which node) ]; then
+  echo "unable to find node!"
+  exit 1
+fi
+
+if [ ! -d $workdir ]; then
+  echo "directory $workdir does not exist!"
+  exit 1
+fi
+
+if [ ! -d $clidir ]; then
+  echo "directory $clidir does not exist!"
+  exit 1
+fi
+
+if [ ! -d $unitdir ]; then
+  echo "directory $unitdir does not exist!"
+  exit 1
+fi
+
+if [ ! -d $jsdir ]; then
+  echo "directory $jsdir does not exist!"
+  exit 1
+fi 
+
+for i in "${execute[@]}" 
+do
+  if [ ! -f $clidir/$i ]; then
+    echo "file $clidir/$i does not exist!"
+    exit 1
+  fi
+  filestr="$filestr $i"
+done
+
+for i in "${execute_unit[@]}" 
+do
+  if [ ! -f $unitdir/$i ]; then
+    echo "file $unitdir/$i does not exist!"
+    exit 1
+  fi
+  filestr_unit="$filestr_unit $i"
+done
+
+for i in "${execute_js[@]}"
+do
+  if [ ! -f $jsdir/$i ]; then
+    echo "file $jsdir/$i does not exist!"
+    exit 1
+  fi
+  filestr_js="$filestr_js $i"
+done
+
+################################################################################
+### Logging
+################################################################################
+
+cd $clidir
+php $executer php $depth $filestr
+cd $unitdir
+php $executer phpunit $depth $filestr_unit
+cd $jsdir
+php $executer node $depth $filestr_js
+
+################################################################################
+### Git
+################################################################################
+
+if [ ! -z $1 ] && [ $1="-push" ]; then
+	cd $workdir
+	git add .
+	git commit -m "Automatically added logging file"
+	git push origin master
+fi
+
+exit 0

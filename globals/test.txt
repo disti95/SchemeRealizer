@@ -1,0 +1,5 @@
+str=foobar
+str1=
+arr=[foo,bar,is,an,array]
+arr1=[]
+num=1

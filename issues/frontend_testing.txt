@@ -1,0 +1,37 @@
+### Config-System
+ - Functional testing[OK]
+ - Frontend binding  [OK]
+
+### toClass
+  - Message Apparently a method is declared as ... comes from the backend(classgen), maybe we should check this in the frontend too, to improve the consistent development of the project.[NOK][FIXED]
+  - Flushed class returns valid PHP-Code(in the case that the following errors aren't set)[OK]
+  - User-Friendly GUI, an error is responsible for a clearing of the information DIV and therefore the user has to click Add, Remove, Show all to view his PHP-Code again. Second perhaps it would be better to deactive the interface/inheritance multi-select field if there are no interfaces, superclasses.[NOK][FIXED]
+  - No modifier possible[NOK][FIXED]
+  - const implementation missing[NOK][FIXED]
+  - User can't get rid of final, abstract[NOK][FIXED]
+
+### toDatabase(MySQL)
+  - defaultparamvalue.php from examples is not parsed[NOK][FIXED]
+  - size of 11,xxxxxx is possible[NOK][FIXED]
+  - error messages come from the backend instead of checking it in the frontend[NOK][FIXED]
+  - User-Friendly GUI, an error is responsible for a clearing of the information DIV and therefore the user has to click Add, Remove, Show all to view his SQL-Code again[NOK][FIXED]
+  - Flushed SQL-File returns non valid code, for instance maximal key length is restricted to 767 bytes and a timestamp column has no length.Here is an analyzing process of the third-party software mysql necessary(keep an eye on data types time, timestamp, datetime and year)[NOK][FIXED]
+  - Beside the list above, flushed SQL-Code is valid SQL-Code[OK]
+  - Empty sqlArr(no attributes available(in most cases interfaces)) are in the file selection list[NOK][FIXED]
+
+### toDatabase(SQLite)
+  - defaultparamvalue.php from examples is not parsed[NOK][FIXED]
+  - error messages come from the backend instead of checking it in the frontend[NOK][FIXED]
+  - User-Friendly GUI, an error is responsible for a clearing of the information DIV and therefore the user has to click Add, Remove, Show all to view his SQL-Code again[NOK][FIXED]
+  - Flushed file returns valid SQL-Code[OK]
+  - Empty sqlArr(no attributes available(in most cases interfaces)) are in the file selection list[NOK][FIXED]
+
+### toUML
+ - php parser(token-based) returns a false array if there is no class implementation (E.g interface iFace1{})[NOK][FIXED]
+ - Modifier selection field disappears if an interface is selected which is fine, but does not appear again if a class is selected after that.[NOK][FIXED]
+ - User-Friendly GUI, an error is responsible for a clearing of the information DIV and therefore the user has to click Add, Remove, Show all to view his UML-Code again. Second perhaps it would be better to deactive the interface/inheritance multi-select field if there are no interfaces, superclasses.[NOK][FIXED]
+ - No modifier possible[NOK][FIXED]
+ - const implementation missing[NOK][FIXED]
+ - Message Apparently a method is declared as ... comes from the backend(umlgen), maybe we should check this in the frontend too, to improve the consistent development of the project.[NOK][FIXED]
+ - Flushed class returns valid UML-Code(in the case that the following errors aren't set)[OK]
+ - User can't get rid of final, abstract[NOK][FIXED]

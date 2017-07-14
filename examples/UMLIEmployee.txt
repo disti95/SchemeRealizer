@@ -1,0 +1,7 @@
+<<interface>>
+Employee
+extends => /path/to/IPerson.php:IPerson
+-------------------------
+-------------------------
+getCompany($name, array $employees = array('Michael', 'Watzer'), callable $func)
+getPerson() {static}

@@ -1,0 +1,34 @@
+### Updates for the Version 1.1
+
+#### Keywords
+
+ - extends      (done)
+ - implements   (done)
+ - abstract     (done)
+ - User-defined
+
+#### Class-Diagram/PHP-Class
+
+ - default($name = "Michael")(done)
+ - Params via array(done)
+
+#### Family: Interface(done)
+
+#### config.xsd
+
+ - clean up the mess!(done)
+
+#### Global-System
+
+  - Evaluate a list as an array, E.g michael, watzer equals array('michael', 'watzer')(done)
+
+#### Logging-System
+
+  - Add js/testing(done)
+
+#### Others
+
+  - php\Parsing.odt - token-based Parser(methods, classes/interfaces)(done)
+  - gen\sqlvalidation.odt - SQLite data types(done)
+
+#### Dont forget git tag!

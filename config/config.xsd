@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+SchemeRealizer - A free ORM and Translator for Diagrams, Databases and PHP-Classes/Interfaces.
+Copyright (C) 2016  Michael Watzer
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ -->
+<!-- @author   Michael Watzer        -->
+<!-- @version  1.0                   -->
+<!-- @category XML Schema Definition -->
+<!-- @since    ?                     -->
+<xs:schema xmlns:xs        = "http://www.w3.org/2001/XMLSchema"
+           targetNamespace = "http://www.schemerealizer.com"
+           xmlns           = "http://www.schemerealizer.com" elementFormDefault="qualified">
+	<!-- Declare root-Tag config -->
+	<xs:element name="config">
+		<xs:complexType>
+			<xs:sequence>
+				<!-- Declare Tags and set the necessary Type -->
+				<xs:element name="paths"   type="pathType"   minOccurs="1" maxOccurs="1"/>
+				<xs:element name="parser"  type="parserType" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="project" type="projType"   minOccurs="1" maxOccurs="1"/>
+				<xs:element name="dsn"     type="dsnType"    minOccurs="1" maxOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!-- General rule -> Minimum of String-Length 1, because at least root "/" is required -->
+	<xs:simpleType name="genRule">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Class-Parser rule -> allowed values(reflection and token) -->
+	<xs:simpleType name="classParserRule">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="reflection"/>
+			<xs:enumeration value="token"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- DB rule -->
+	<xs:simpleType name="dbRule">
+		<xs:restriction base="xs:token">
+			<xs:pattern value="[a-zA-Z0-9_]*"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Complex-Type Area/Setting-Up Type for paths -->
+	<xs:complexType name="pathType">
+		<xs:sequence>
+			<xs:element name="class"       type="genRule" minOccurs="1" maxOccurs="1" nillable="false"/>
+			<xs:element name="uml"         type="genRule" minOccurs="1" maxOccurs="1" nillable="false"/>
+			<xs:element name="sql"         type="genRule" minOccurs="1" maxOccurs="1" nillable="false"/>
+			<xs:element name="originclass" type="genRule" minOccurs="1" maxOccurs="1" nillable="false"/>
+			<xs:element name="originuml"   type="genRule" minOccurs="1" maxOccurs="1" nillable="false"/>
+			<xs:element name="originsql"   type="genRule" minOccurs="1" maxOccurs="1" nillable="false"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- Complex-Type Area/Setting-Up Type for parser -->
+	<xs:complexType name="parserType">
+		<xs:sequence>
+			<xs:element name="classparser"       type="classParserRule" minOccurs="1" maxOccurs="1" nillable="false"/>
+			<xs:element name="originclassparser" type="classParserRule" minOccurs="1" maxOccurs="1" nillable="false"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- Complex-Type Area/Setting-Up Type for project -->
+	<xs:complexType name="projType">
+		<xs:sequence>
+			<xs:element name="path"       type="genRule" minOccurs="1" maxOccurs="1" nillable="false"/>
+			<xs:element name="originpath" type="genRule" minOccurs="1" maxOccurs="1" nillable="false"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- Complex-Type Area/Setting-Up Type for DSN -->
+	<xs:complexType name="dsnType">
+		<xs:sequence>
+			<xs:element name="host"       type="genRule" minOccurs="1" maxOccurs="1" nillable="false"/>
+			<xs:element name="user"       type="genRule" minOccurs="1" maxOccurs="1" nillable="false"/>
+			<xs:element name="db"         type="dbRule"  minOccurs="1" maxOccurs="1" nillable="false"/>
+			<xs:element name="originhost" type="genRule" minOccurs="1" maxOccurs="1" nillable="false"/>
+			<xs:element name="originuser" type="genRule" minOccurs="1" maxOccurs="1" nillable="false"/>
+			<xs:element name="origindb"   type="dbRule"  minOccurs="1" maxOccurs="1" nillable="false"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

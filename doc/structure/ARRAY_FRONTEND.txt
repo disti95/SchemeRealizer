@@ -1,0 +1,108 @@
+# Main
+
+ - backend sends a JSON-String to the frontend
+ - JSON-String is parsed to an array
+ - user modifies array and the frontend converts the array back to a JSON-String
+ - JSON-String is parsed to an array and delivered to the gen/* class
+
+## Arrays used in the frontend
+
+#### Class and UML:
+
+array["error"]     => true|false
+     ["val"][0][0] => "TABLE"|"CLASS-DIAGRAM"|"CLASS"
+            [0][1] => array(name
+ 			               ,key
+			               ,modifier
+			               ,selected
+			               ,array keywords
+			               ,array extends
+			               ,array implements
+			               ,array parameter|const value|member value)
+
+##### Keys
+
+###### Class
+
+ - 1: Attribute
+ - 2: Getter
+ - 3: Setter
+ - 4: Method(E.g UML parsed methods)
+ - 5: Class
+ - 6: Interface
+ 
+###### UML
+
+ - 1: Attributes
+ - 2: Methods(There are not setter/getter)
+ - 3: Class
+ - 4: Interface
+
+##### Explanation
+
+ - name      : Name of Class, Interface, Attribute or Method
+ - modifier  : Modifier which is used, private, protected or public
+ - selected  : true = visible in frontend, otherwise invisible
+ - keywords  : keywords e.g final, static, abstract or const
+ - extends   : inheritance e.g array('/path/to/parent.php' => array('MyParent', true)), if true than the parent is visible in the frontend, otherwise it is invisible
+ - implements: imlementation e.g array('/path/to/interface.php' => array('MyIFace', true), '/path/to/interface2.php' => array('MyIFace2, true)), if true than the interface is visible in the frontend, otherwise it is invisible
+ - parameter : parameter used by a function e.g array('$name' => 'Michael', '$family' => array('Monika', 'Stefanie'))
+               Also being used by default values concerning constants and class members e.g array('Michael', array('Monika', 'Stefanie'))
+ 
+#### SQL:
+ 
+array["error"]                  => true|false
+     ["val"]["elements"][0][0]  => "CLASS"|"CLASS-DIAGRAM"
+                        [0][1]  => array(name
+		 					            ,datatype
+		   				                ,size
+						                ,index
+						                ,null
+						                ,autoincrement
+						                ,selected
+						                ,default)
+     ["val"]["datatypes"]       => array("int", "boolean",..) 
+  
+##### Explanation
+
+ - name         : Name of the column
+ - datatype     : Data type of the column, e.g integer, varchar,..
+ - size         : Size of the column depending on the data type
+ - index        : 1 = Primary, 2 = Unique index, 3 = Index
+ - null         : 1 = Null, otherwise Not Null
+ - autoincrement: 1 = AI, otherwise no AI column
+ - selected     : column is visible in the frontend, otherwise it is invisible
+ - default      : default value
+ 
+##### Default settings
+ 
+ - datatype     : int
+ - size         : MySQL(11), SQLite(-1(no size at all))
+ - index        : -1(No Index)
+ - null         : -1(Not Null)
+ - autoincrement: -1(No AI)
+ - selected     : false
+ - default      : false
+ 
+#### MongoDB:
+
+array["error"]     => true|false
+ 	  TranslateTo
+	  ,database
+ 	  ,array(
+ 	   		colname =>
+ 			array(
+ 			 	array options-value,
+ 	   		 	,array(array(key-value-type))
+ 	   		)
+ 		)
+ 		
+
+ 	   
+##### Explanation
+
+ - TranslateTo  	  : NoSQL-based DBMS
+ - database     	  : Database name
+ - collection   	  : Collection name
+ - array(o-v)	  	  : Options to specify the collection boundaries
+ - array(array(k-v-t)): delivers the actual data, form is needed because of the JSON versatility
