@@ -26,7 +26,7 @@ SchemeRealizer - A free ORM and Translator for Diagrams, Databases and Classes/I
 
  - PHP >= 5.6
  - JRE(If you consider to parse Java-Classes)
- - Webserver(f.e apache2)
+ - Webserver(E.g apache2)
 
 ### Licence
 
