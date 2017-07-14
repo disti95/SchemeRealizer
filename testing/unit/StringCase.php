@@ -77,5 +77,13 @@
 		public function testGetRandomString() {
 			$this->assertEquals(pow(2, 16), strlen(\utils\String::getRandomString(pow(2, 16))));
 		}
+		/**
+		 * @category testing static method chkJavaClassName
+		 */
+		public function testChkJavaClassName() {
+			$this->assertEquals(false, \utils\String::chkJavaClassName("/not/allowed"));
+			$this->assertEquals(true,  \utils\String::chkJavaClassName("main.java.foo.bar"));
+			$this->assertEquals(true,  \utils\String::chkJavaClassName("main.java.foo.bar1"));
+		}
 	}
 ?>

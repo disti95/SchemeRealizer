@@ -243,5 +243,17 @@
 				$randStr .= $characters[rand(0, $charlen - 1)];
 			return $randStr;
 		}
+		/**
+		 * @category Check if Java classname is valid
+		 * @return   boolean
+		 */
+		public static function chkJavaClassName($str) {
+			$regex = '/^[A-Za-z_$]+[a-zA-Z0-9_$]*$/';
+			$parts = explode('.', $str);
+			foreach($parts as $part) 
+				if(!preg_match($regex, $part))
+					return false;
+			return true;
+		}
 	}
 ?>

@@ -26,7 +26,9 @@
 	include_once "../../utils/File.php";
 	include_once "../../utils/Directory.php";
 	$arr = array("../../net/SocketClient.php"
-			    ,"../../native/Validate.php");
+			    ,"../../native/Validate.php"
+			    ,"../../utils/String.php"
+			    ,"../../java/api/java_parse.php");
 	if(($res = utils\File::setIncludes($arr)) !== true)
 		die($res."\n");
 
@@ -45,14 +47,8 @@
 		 * @category test Java-Parse socket
 		 */
 		public function testJavaParseSocket() {
-			$request  = "<?xml version='1.0' encoding='utf-8'?>
-						 <JavaParse>
-							 <dir>/home/michael/workspace/SchemeRealizer/java/bin/test/java</dir>
-							 <class>test.java.Person</class>
-						 </JavaParse>";
-			$sc       = new \net\SocketClient("localhost", 32727);
-			$response = $sc->writeSocket($request);
-			$sc->closeSocket();
-			echo $response;
+			$java_parse = new java\api\java_parse("/home/michael/workspace/SchemeRealizer/java/bin/test/java"
+					                             ,"test.java.Person");			
+			var_dump($java_parse->getArr());
 		}
 	}
